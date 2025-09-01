@@ -1,1 +1,1 @@
-Welcome to Python coding!
+Welcome to Python!

@@ -1,17 +1,12 @@
 #!/usr/bin/python3
 def update_dictionary(a_dictionary, key, value):
-    """Update a dictionary.
+    """
+    Replace or add a key/value pair in a dictionary.
 
-    If `key` exists in `a_dictionary`, its value is updated to `value`.
-    If `key` does not exist, it is added to `a_dictionary` with the value `value`.
-
-    Args:
-        a_dictionary (dict): The dictionary to update.
-        key: The key to add or update.
-        value: The value associated with `key`.
-
-    Returns:
-        dict: The updated dictionary.
+    :param a_dictionary: dict - the dictionary to update.
+    :param key: str - the key to update or add.
+    :param value: any - the value to assign to the key.
+    :return: dict - the updated dictionary.
     """
     a_dictionary[key] = value
     return a_dictionary

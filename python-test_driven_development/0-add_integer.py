@@ -1,4 +1,12 @@
 #!/usr/bin/python3
+"""
+This module defines a function for safely adding two numbers.
+
+It validates that both inputs are integers or floats, casts floats to integers,
+and raises appropriate exceptions for invalid types. This ensures consistent
+behavior and type safety in arithmetic operations.
+"""
+
 def add_integer(a, b=98):
     """
     Adds two numbers after validating their types.

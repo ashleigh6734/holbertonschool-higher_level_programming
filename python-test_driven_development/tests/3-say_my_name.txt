@@ -1,0 +1,23 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("Jane", "Doe")
+My name is Jane Doe
+>>> try:
+...     say_my_name(12, "White")
+... except Exception as e:
+...     print(e)
+first_name must be a string
+>>> try:
+...     say_my_name("White", 12)
+... except Exception as e:
+...     print(e)
+last_name must be a string
+>>> try:
+...     say_my_name("White", None)
+... except Exception as e:
+...     print(e)
+last_name must be a string
+>>> try:
+...     say_my_name()
+... except Exception as e:
+...     print(e)
+say_my_name() missing 1 required positional argument: 'first_name'

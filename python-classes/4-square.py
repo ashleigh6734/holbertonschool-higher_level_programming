@@ -30,15 +30,17 @@ class Square:
         """
         return (self.__size * self.__size)
 
-#getter
-    @property
-    def size(self):
+"""getter"""
+@property
+def size(self):
         """ Retrieves the size of the square
         """
         return self.__size
-#setter
-    @size.setter
-    def size(self, value):
+
+"""setter"""
+
+@size.setter
+def size(self, value):
         """ Sets the size of the square
         Args:
           value (int): size of a side of the square

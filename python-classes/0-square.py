@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """
-Module for class Square
-Empty class
+Module for class "Square"
+NB: class is empty for task 0
 """
 
 
 class Square:
-    pass
     """
     empty class
     Args:

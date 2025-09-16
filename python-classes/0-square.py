@@ -6,6 +6,7 @@ NB: class is empty for task 0
 
 
 class Square:
+    pass
     """
     empty class
     Args:

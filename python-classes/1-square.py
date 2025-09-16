@@ -3,6 +3,7 @@
 Module for class "Square"
 """
 
+
 class Square:
     """
     class that defines a square by: (based on 0-square.py)

@@ -23,17 +23,23 @@ class Rectangle:
         Returns:
           nothing
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
-    """getter"""
+    """getters"""
     @property
     def width(self):
         """ Retrieves the width of the Rectangle
         """
         return self.__width
 
-    """setter"""
+    @property
+    def height(self):
+        """ Retrieves the width of the Rectangle
+        """
+        return self.__height
+
+    """setters"""
     @width.setter
     def width(self, value):
         """ Sets the width of the Rectangle
@@ -49,14 +55,6 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = value
 
-    """getter"""
-    @property
-    def height(self):
-        """ Retrieves the width of the Rectangle
-        """
-        return self.__height
-
-    """setter"""
     @height.setter
     def height(self, value):
         """ Sets the width of the Rectangle
@@ -70,4 +68,4 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self.__width = value
+        self.__height = value

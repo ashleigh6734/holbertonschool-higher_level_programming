@@ -3,6 +3,7 @@
 Write a function that returns the list of an object
 """
 
+
 def lookup(obj):
     """ Returns a list object """
 

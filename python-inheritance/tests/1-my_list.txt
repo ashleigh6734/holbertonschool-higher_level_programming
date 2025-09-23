@@ -1,30 +1,37 @@
-"""
-Unit tests for the MyList class and its print_sorted method.
+    """
+    Test the print_sorted function. 
+    """
 
->>> MyList = __import__('1-my_list').MyList
+    """
+    Import ``print_sorted`` from the ``1-my_list`` file
+    >>> MyList = __import__('1-my_list').MyList
 
-# Basic usage
->>> numbers = MyList()
->>> numbers.extend([10, 3, 7, 1, 5])
->>> print(numbers)
-[10, 3, 7, 1, 5]
->>> numbers.print_sorted()
-[1, 3, 5, 7, 10]
->>> print(numbers)
-[10, 3, 7, 1, 5]
+    Happy path - print array
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
 
-# Add duplicates
->>> numbers.append(3)
->>> numbers.print_sorted()
-[1, 3, 3, 5, 7, 10]
+    Check for __str__
+    >>> print(str(my_list))
+    [1, 4, 2, 3, 5]
 
-# Add negatives
->>> numbers.extend([-5, -1])
->>> numbers.print_sorted()
-[-5, -1, 1, 3, 3, 5, 7, 10]
+    Alternative prints as __str__
+    >>> def __str__(self):
+    ...    return [self]
 
-# Empty list
->>> empty = MyList()
->>> empty.print_sorted()
-[]
-"""
+    Check for negative number
+    >>> my_list.append(-2)
+    >>> my_list.print_sorted()
+    [-2, 1, 2, 3, 4, 5]
+
+    Check for empty list
+    >>> empty_list = MyList()
+    >>> empty_list.print_sorted()
+    []
+
+    """

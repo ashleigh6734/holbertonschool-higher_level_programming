@@ -1,0 +1,74 @@
+    """
+    Tests the BaseGeometry class
+    """
+
+    """
+    Import ``Basegeometry class`` from the ``7-base_geometry`` file
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+    Happy path
+    area method returns 'not implemented' Exception
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+    integer validator method validates int value
+    >>> bg.integer_validator("my_int", 12)
+
+    validator method catches strings
+    >>> bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
+    validator method catches int <=0 errors
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
+
+    call empty validator
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+    call validator with one argument
+    >>> bg.integer_validator("name")
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+    call validator with list
+    >>> bg.integer_validator("name", [1])
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
+    call validator with tuple
+    >>> bg.integer_validator("name", (4,))
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
+    call validator with boolean
+    >>> bg.integer_validator("name", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
+    call validator with None
+    >>> bg.integer_validator("name", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
+    call validator with dict
+    >>> bg.integer_validator("name", {3, 4})
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
+    """

@@ -9,9 +9,6 @@ class BaseGeometry:
     pass
     """
     empty class
-    Args:
-      nothing
-
     Returns:
       nothing
     """

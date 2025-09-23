@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
 Module for class "BaseGeometry"
-NB: class is empty for task 0
 """
 
 

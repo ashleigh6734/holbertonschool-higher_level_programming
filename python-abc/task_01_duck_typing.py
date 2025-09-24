@@ -42,5 +42,5 @@ class Rectangle(Shape):
         return 2 * (self.width + self.height)
     
 def shape_info(self):
-    print(f"Area: {Shape.area()}")
-    print(f"Perimeter: {Shape.perimeter()}")
+    print(f"Area: {self.area()}")
+    print(f"Perimeter: {self.perimeter()}")

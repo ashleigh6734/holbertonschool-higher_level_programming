@@ -6,30 +6,30 @@ import json
 class BasicHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/':
-            # Send response status code
+
             self.send_response(200)
 
-            # Send headers
+
             self.send_header('Content-type', 'text/html')
             self.end_headers()
 
-            # Send response body
+
             message = "Hello, this is a simple API!"
             self.wfile.write(bytes(message, "utf8"))
         elif self.path == '/data':
-            # Send response status code
+
             self.send_response(200)
 
-            # Send headers
+
             self.send_header('Content-type', 'application/json')
             self.end_headers()
 
-            # Send response body
+
             my_dict = {"name": "John", "age": 30, "city": "New York"}
             message = json.dumps(my_dict)
             self.wfile.write(bytes(message, "utf8"))
         elif self.path == '/status':
-            # Send response status code
+
             self.send_response(200)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()

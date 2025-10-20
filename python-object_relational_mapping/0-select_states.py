@@ -7,23 +7,27 @@ Connects to MySQL using MySQLdb and prints all states sorted by id
 import MySQLdb
 import sys
 
+
+def get_states(username, password, dbname):
+    """ Get all states from the database and print them sorted by id """
+    try:
+        with MySQLdb.connect(
+                host="localhost",
+                port=3306,
+                user=username,
+                passwd=password,
+                db=dbname) as db:
+
+            with db.cursor() as cursor:
+                cursor.execute("SELECT * FROM states ORDER BY id ASC")
+                # Fetch and display results
+                results = cursor.fetchall()
+                for row in results:
+                    print(row)
+
+    except MySQLdb.Error as error:
+        print(f"MySQL Error: {error}")
+
+
 if __name__ == "__main__":
-    # Get MySQL credentials and database name from command-line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
-
-    # Connect to MySQL server on localhost:3306
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=db_name)
-
-    # Create a cursor and execute the query
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-
-    # Fetch and print all rows
-    for row in cursor.fetchall():
-        print(row)
-
-    # Clean up
-    cursor.close()
-    db.close()
+    get_states(sys.argv[1], sys.argv[2], sys.argv[3])

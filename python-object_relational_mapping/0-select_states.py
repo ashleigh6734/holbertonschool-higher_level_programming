@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+
+"""
+Task 0: List all states from the database hbtn_0e_0_usa
+Connects to MySQL using MySQLdb and prints all states sorted by id
+"""
+
+
 import sys
 import MySQLdb
 

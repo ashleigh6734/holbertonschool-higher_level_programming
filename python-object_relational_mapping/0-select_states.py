@@ -1,38 +1,29 @@
 #!/usr/bin/python3
-
 """
 Task 0: List all states from the database hbtn_0e_0_usa
 Connects to MySQL using MySQLdb and prints all states sorted by id
 """
 
-
-import sys
 import MySQLdb
+import sys
 
 if __name__ == "__main__":
     # Get MySQL credentials and database name from command-line arguments
-    
     username = sys.argv[1]
     password = sys.argv[2]
-    database = sys.argv[3]
+    db_name = sys.argv[3]
 
-    # Connect to the MySQL database
-    db = MySQLdb.connect(host="localhost", port=3306,
-                         user=username, passwd=password, db=database)
+    # Connect to MySQL server on localhost:3306
+    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=db_name)
 
-    # Create a cursor object to interact with the database
+    # Create a cursor and execute the query
     cursor = db.cursor()
-
-    # Execute the SQL query to fetch all states ordered by id
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
-    # Fetch all the results
-    states = cursor.fetchall()
+    # Fetch and print all rows
+    for row in cursor.fetchall():
+        print(row)
 
-    # Print each state
-    for state in states:
-        print(state)
-
-    # Close the cursor and database connection
+    # Clean up
     cursor.close()
     db.close()

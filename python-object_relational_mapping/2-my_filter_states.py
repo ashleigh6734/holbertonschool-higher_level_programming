@@ -25,7 +25,7 @@ if __name__ == "__main__":
     # Create a cursor and execute the query
     cursor = db.cursor()
     cursor.execute("SELECT id, name FROM states "
-                    "WHERE name = '{}' ORDER BY id ASC".format(state_name))
+                  "WHERE name = '{}' ORDER BY id ASC".format(state_name))
 
     # Fetch and print all rows
     for row in cursor.fetchall():

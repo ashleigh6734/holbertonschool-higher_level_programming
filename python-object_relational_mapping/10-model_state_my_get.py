@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Task 10: Print the State id for a given name from hbtn_0e_6_usa using SQLAlchemy
+Task 10: Print the State id for a given name
 """
 
 import sys

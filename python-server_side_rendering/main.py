@@ -6,3 +6,7 @@ attendees = [
 
 with open('template.txt', 'r') as file:
     template_content = file.read()
+
+from task_00_intro import generate_invitations
+
+generate_invitations(template_content, attendees)
